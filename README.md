@@ -22,6 +22,9 @@ A deep learning model to predict the MyAnimeList user score for any given anime 
 <ul>
   <li><b>Final Test MAE:</b> 0.4826</li>
   <li><b>Model Accuracy:</b> On average, predictions are within ±0.48 points of the actual rating on a 1-10 scale.</li>
+  <p align="center">
+  <img src="results_graph.png" width="600" title="Model Training Results">
+</p>
 </ul>
 
 <h2>🛠️ Technical Challenges & Solutions</h2>
@@ -41,6 +44,9 @@ A deep learning model to predict the MyAnimeList user score for any given anime 
 <h2>🚀 Interactive Demo</h2>
 <p>
   The project features a custom <b>Inference Function</b> that allows users to input hypothetical anime data (Studio, Genre, Episodes) to receive an instant predicted score.
+  <p align="center">
+  <img src="demo_screenshot.png" width="600" title="Model Training Results">
+</p>
 </p>
 
 <hr>
