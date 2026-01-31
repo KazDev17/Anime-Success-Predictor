@@ -1,41 +1,50 @@
 # Anime-Success-Predictor
 A deep learning model to predict the MyAnimeList user score for any given anime metadata.
-📺 Anime Success Predictor
-A Deep Learning approach to predicting MyAnimeList scores.
+<h1 align="center">📺 Anime Success Predictor</h1>
 
-📌 Project Overview
-Can we predict how much the anime community will love a show before it even airs? This project uses a Deep Neural Network to analyze the relationship between an anime's metadata (Studio, Genre, Theme, Source Material) and its final user rating on MyAnimeList.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" />
+</p>
 
-By processing over 14,000 titles, this model identifies the complex patterns that lead to a "masterpiece" rating versus a "flop."
+<hr>
 
-🚀 Key Features
-Deep Learning Architecture: A 4-layer Sequential Neural Network built with TensorFlow/Keras.
+<h2>📌 Project Overview</h2>
+<p>
+  This project utilizes a <b>Deep Neural Network</b> to predict user ratings on MyAnimeList based on metadata such as Studios, Genres, Themes, and Source material. By analyzing over 14,000 titles, the model identifies complex patterns that drive anime success.
+</p>
 
-High-Dimensional Data: Utilized One-Hot Encoding to transform categorical metadata into a 995-feature vector.
 
-Advanced Data Cleaning: Implemented custom imputation logic to handle missing themes and studio data, preserving 40% more data than standard row-deletion.
 
-Interactive Demo: Includes a Python-based interface for real-time "What-If" analysis of hypothetical anime.
+<h2>📊 Results</h2>
+<ul>
+  <li><b>Final Test MAE:</b> 0.4826</li>
+  <li><b>Model Accuracy:</b> On average, predictions are within ±0.48 points of the actual rating on a 1-10 scale.</li>
+</ul>
 
-📊 Results
-The model's performance was evaluated using Mean Absolute Error (MAE).
+<h2>🛠️ Technical Challenges & Solutions</h2>
 
-Final Test MAE: 0.4826
+<h3>1. Solving the 'NaN' Loss Crisis</h3>
+<p>
+  <b>Challenge:</b> During initial training, the loss function returned <code>NaN</code> (Not a Number), breaking the model's weights. <br>
+  <b>Solution:</b> Identified that <i>StandardScaler</i> was propagating missing values across the feature matrix. I implemented a robust <b>Imputation Strategy</b> using median values for years and constant placeholders for categorical themes, ensuring a mathematically stable input for the neural network.
+</p>
 
-Interpretation: On average, the model's predictions are accurate within ~0.48 points of the actual MAL score (on a 1-10 scale).
+<h3>2. High-Dimensional Feature Space</h3>
+<p>
+  <b>Challenge:</b> Converting categorical text into numeric data created a sparse matrix of nearly 1,000 features, leading to potential "memory bloat" and overfitting. <br>
+  <b>Solution:</b> Utilized <b>One-Hot Encoding</b> combined with <b>Dropout Regularization (20%)</b>. This forced the network to learn generalized patterns rather than memorizing specific niche studios or rare genre combinations.
+</p>
 
-🛠️ Tech Stack
-Language: Python
+<h2>🚀 Interactive Demo</h2>
+<p>
+  The project features a custom <b>Inference Function</b> that allows users to input hypothetical anime data (Studio, Genre, Episodes) to receive an instant predicted score.
+</p>
 
-Libraries: TensorFlow, Keras, Pandas, NumPy, Scikit-Learn, Matplotlib
+<hr>
 
-Environment: Google Colab / Jupyter Notebooks
-
-📂 Dataset
-The data consists of 14k+ entries with features including:
-
-Type: (TV, Movie, OVA, etc.)
-
-Source: (Manga, Light Novel, Original, etc.)
-
-Metadata: Genres, Themes, Studios, and Episode counts.
+<p align="center">
+  <i>Developed as a Deep Learning Portfolio Project - 2026</i>
+</p>
