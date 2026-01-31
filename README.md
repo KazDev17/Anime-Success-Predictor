@@ -1,5 +1,3 @@
-# Anime-Success-Predictor
-A deep learning model to predict the MyAnimeList user score for any given anime metadata.
 <h1 align="center">📺 Anime Success Predictor</h1>
 
 <p align="center">
